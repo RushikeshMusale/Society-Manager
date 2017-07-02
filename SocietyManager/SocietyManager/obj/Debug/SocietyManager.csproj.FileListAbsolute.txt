@@ -67,3 +67,6 @@ U:\github\Society-Manager\SocietyManager\SocietyManager\bin\System.Web.Mvc.xml
 U:\github\Society-Manager\SocietyManager\SocietyManager\obj\Debug\SocietyManager.csprojResolveAssemblyReference.cache
 U:\github\Society-Manager\SocietyManager\SocietyManager\obj\Debug\SocietyManager.dll
 U:\github\Society-Manager\SocietyManager\SocietyManager\obj\Debug\SocietyManager.pdb
+U:\github\Society-Manager\SocietyManager\SocietyManager\obj\Debug\SocietyManager.Migrations.InitialCreate.resources
+U:\github\Society-Manager\SocietyManager\SocietyManager\obj\Debug\SocietyManager.csproj.GenerateResource.Cache
+U:\github\Society-Manager\SocietyManager\SocietyManager\obj\Debug\SocietyManager.Migrations.tablenameChanged.resources
