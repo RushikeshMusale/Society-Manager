@@ -21,7 +21,7 @@ namespace IdentitySample.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("SocietyModel", throwIfV1Schema: false)
         {
         }
 
@@ -35,6 +35,32 @@ namespace IdentitySample.Models
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
+        }
+
+        /// <summary>
+        /// To change Default tableNames:
+        /// AspNetRoles,
+        /// AspNetUserClaims,
+        /// AspNetUserRoles,
+        /// AspNetUsers
+        /// </summary>
+        /// <param name="modelBuilder"></param>
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            //When below lines are executed it will give error:
+            //"Cannot drop database "aspnet-Samples-20170612012801" because it is currently in use."
+            //to avoid use these commands
+            //add-migration tableNamechanged
+            //update-database
+
+            modelBuilder.Entity<ApplicationUser>().ToTable("User").Property(p => p.Id).HasColumnName("UserId");
+            modelBuilder.Entity<IdentityRole>().ToTable("Role");
+            modelBuilder.Entity<IdentityUserRole>().ToTable("UserRole");
+            modelBuilder.Entity<IdentityUserClaim>().ToTable("UserClaim");
+            modelBuilder.Entity<IdentityUserLogin>().ToTable("Login");
+
         }
     }
 }
