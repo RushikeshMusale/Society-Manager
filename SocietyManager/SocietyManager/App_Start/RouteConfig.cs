@@ -10,6 +10,13 @@ namespace IdentitySample
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                "Society",
+                "Society/{action}/{id}",
+                new {controller="Society", action="Index", id=UrlParameter.Optional},
+                new[] { "SocietyManager.Controllers.SocietyControllers" }
+                );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
