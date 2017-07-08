@@ -261,6 +261,7 @@
     <Compile Include="Models\AdminViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\SocietyModels\SocietyDetailsModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -278,7 +279,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\SocietyModels\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201707021328317_InitialCreate.resx">
