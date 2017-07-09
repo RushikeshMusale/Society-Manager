@@ -13,6 +13,7 @@ namespace SocietyManager.Models.SocietyModels
         public string Builder { get; set; }
         public string AccountNumber { get; set; }
         public int NumberOfFlats { get; set; }
-        
+
+        public HttpPostedFileBase SocietyImage { get; set; }
     }
 }
