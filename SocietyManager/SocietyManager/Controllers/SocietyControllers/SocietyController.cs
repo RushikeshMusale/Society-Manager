@@ -11,7 +11,7 @@ namespace SocietyManager.Controllers.SocietyControllers
     [Authorize(Roles ="Admin")]
     public class SocietyController : Controller
     {
-        SocietyMaintenanceEntities1 db = new SocietyMaintenanceEntities1();
+        SocietyMaintenanceEntities db = new SocietyMaintenanceEntities();
         // GET: Society
         public ActionResult Index()
         {

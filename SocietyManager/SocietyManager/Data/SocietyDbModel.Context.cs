@@ -13,10 +13,10 @@ namespace SocietyManager.Data
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SocietyMaintenanceEntities1 : DbContext
+    public partial class SocietyMaintenanceEntities : DbContext
     {
-        public SocietyMaintenanceEntities1()
-            : base("name=SocietyMaintenanceEntities1")
+        public SocietyMaintenanceEntities()
+            : base("name=SocietyMaintenanceEntities")
         {
         }
     
