@@ -12,15 +12,11 @@ namespace SocietyManager.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Receipt
+    public partial class C__MigrationHistory
     {
-        public int RcptId { get; set; }
-        public int PmntId { get; set; }
-        public int MtnId { get; set; }
-        public decimal Received { get; set; }
-        public System.DateTime RcptIssued { get; set; }
-    
-        public virtual Maintenance Maintenance { get; set; }
-        public virtual Payment Payment { get; set; }
+        public string MigrationId { get; set; }
+        public string ContextKey { get; set; }
+        public byte[] Model { get; set; }
+        public string ProductVersion { get; set; }
     }
 }

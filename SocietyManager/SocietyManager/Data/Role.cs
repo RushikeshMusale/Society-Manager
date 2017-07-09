@@ -12,15 +12,18 @@ namespace SocietyManager.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Receipt
+    public partial class Role
     {
-        public int RcptId { get; set; }
-        public int PmntId { get; set; }
-        public int MtnId { get; set; }
-        public decimal Received { get; set; }
-        public System.DateTime RcptIssued { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Role()
+        {
+            this.Users = new HashSet<User>();
+        }
     
-        public virtual Maintenance Maintenance { get; set; }
-        public virtual Payment Payment { get; set; }
+        public string Id { get; set; }
+        public string Name { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<User> Users { get; set; }
     }
 }

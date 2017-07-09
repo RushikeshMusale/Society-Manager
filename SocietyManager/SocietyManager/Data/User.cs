@@ -12,29 +12,34 @@ namespace SocietyManager.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Flat
+    public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Flat()
+        public User()
         {
-            this.Maintenances = new HashSet<Maintenance>();
-            this.Owners = new HashSet<Owner>();
-            this.Tenants = new HashSet<Tenant>();
+            this.Logins = new HashSet<Login>();
+            this.UserClaims = new HashSet<UserClaim>();
+            this.Roles = new HashSet<Role>();
         }
     
-        public int FlatId { get; set; }
-        public string FlatNumber { get; set; }
-        public int BHK { get; set; }
-        public double Area { get; set; }
-        public bool IsRented { get; set; }
-        public int SocietyId { get; set; }
+        public string UserId { get; set; }
+        public string Email { get; set; }
+        public bool EmailConfirmed { get; set; }
+        public string PasswordHash { get; set; }
+        public string SecurityStamp { get; set; }
+        public string PhoneNumber { get; set; }
+        public bool PhoneNumberConfirmed { get; set; }
+        public bool TwoFactorEnabled { get; set; }
+        public Nullable<System.DateTime> LockoutEndDateUtc { get; set; }
+        public bool LockoutEnabled { get; set; }
+        public int AccessFailedCount { get; set; }
+        public string UserName { get; set; }
     
-        public virtual Society Society { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Maintenance> Maintenances { get; set; }
+        public virtual ICollection<Login> Logins { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Owner> Owners { get; set; }
+        public virtual ICollection<UserClaim> UserClaims { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tenant> Tenants { get; set; }
+        public virtual ICollection<Role> Roles { get; set; }
     }
 }

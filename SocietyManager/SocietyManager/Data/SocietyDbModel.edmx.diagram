@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="570ff8c44e614cc88a4ccb344c4c8506" Name="Diagram1">
+        <EntityTypeShape EntityType="SocietyMaintenanceModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SocietyMaintenanceModel.Flat" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SocietyMaintenanceModel.Login" Width="1.5" PointX="10.25" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SocietyMaintenanceModel.Maintenance" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SocietyMaintenanceModel.Owner" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SocietyMaintenanceModel.Payment" Width="1.5" PointX="7.5" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SocietyMaintenanceModel.Person" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SocietyMaintenanceModel.Receipt" Width="1.5" PointX="9.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SocietyMaintenanceModel.Role" Width="1.5" PointX="5.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SocietyMaintenanceModel.Society" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SocietyMaintenanceModel.sysdiagram" Width="1.5" PointX="9.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SocietyMaintenanceModel.Tenant" Width="1.5" PointX="7.5" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SocietyMaintenanceModel.User" Width="1.5" PointX="8" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="SocietyMaintenanceModel.UserClaim" Width="1.5" PointX="10.25" PointY="12.25" IsExpanded="true" />
+        <AssociationConnector Association="SocietyMaintenanceModel.FK_Flat_Society" ManuallyRouted="false" />
+        <AssociationConnector Association="SocietyMaintenanceModel.FK_Maintenance_Flat" ManuallyRouted="false" />
+        <AssociationConnector Association="SocietyMaintenanceModel.FK_Owner_Flat" ManuallyRouted="false" />
+        <AssociationConnector Association="SocietyMaintenanceModel.FK_Tenant_Flat" ManuallyRouted="false" />
+        <AssociationConnector Association="SocietyMaintenanceModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="SocietyMaintenanceModel.FK_Payment_Maintenance" ManuallyRouted="false" />
+        <AssociationConnector Association="SocietyMaintenanceModel.FK_Receipt_Maintenance" ManuallyRouted="false" />
+        <AssociationConnector Association="SocietyMaintenanceModel.FK_Owner_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="SocietyMaintenanceModel.FK_Owner_Society" ManuallyRouted="false" />
+        <AssociationConnector Association="SocietyMaintenanceModel.FK_Payment_Owner" ManuallyRouted="false" />
+        <AssociationConnector Association="SocietyMaintenanceModel.FK_Tenant_Owner" ManuallyRouted="false" />
+        <AssociationConnector Association="SocietyMaintenanceModel.FK_Receipt_Payment" ManuallyRouted="false" />
+        <AssociationConnector Association="SocietyMaintenanceModel.FK_Tenant_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="SocietyMaintenanceModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="SocietyMaintenanceModel.UserRole" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

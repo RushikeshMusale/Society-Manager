@@ -175,11 +175,28 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Data\SocietyDbModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SocietyDbModel.edmx</DependentUpon>
+      <LastGenOutput>SocietyDbModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\SocietyDbModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SocietyDbModel.edmx</DependentUpon>
+      <LastGenOutput>SocietyDbModel.cs</LastGenOutput>
+    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <EntityDeploy Include="Data\SocietyDbModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SocietyDbModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Data\SocietyDbModel.edmx.diagram">
+      <DependentUpon>SocietyDbModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -244,7 +261,63 @@
     <Compile Include="Controllers\RolesAdminController.cs" />
     <Compile Include="Controllers\SocietyControllers\SocietyController.cs" />
     <Compile Include="Controllers\UserAdminController.cs" />
-    <Compile Include="Data\sysdiagram.cs" />
+    <Compile Include="Data\C__MigrationHistory.cs">
+      <DependentUpon>SocietyDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Flat.cs">
+      <DependentUpon>SocietyDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Login.cs">
+      <DependentUpon>SocietyDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Maintenance.cs">
+      <DependentUpon>SocietyDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Owner.cs">
+      <DependentUpon>SocietyDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Payment.cs">
+      <DependentUpon>SocietyDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Person.cs">
+      <DependentUpon>SocietyDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Receipt.cs">
+      <DependentUpon>SocietyDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Role.cs">
+      <DependentUpon>SocietyDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Society.cs">
+      <DependentUpon>SocietyDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SocietyDbModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SocietyDbModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SocietyDbModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SocietyDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SocietyDbModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SocietyDbModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sysdiagram.cs">
+      <DependentUpon>SocietyDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Tenant.cs">
+      <DependentUpon>SocietyDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\User.cs">
+      <DependentUpon>SocietyDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\UserClaim.cs">
+      <DependentUpon>SocietyDbModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -287,6 +360,9 @@
     <EmbeddedResource Include="Migrations\201707021409387_tablenameChanged.resx">
       <DependentUpon>201707021409387_tablenameChanged.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

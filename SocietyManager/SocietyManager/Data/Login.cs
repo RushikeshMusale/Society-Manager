@@ -12,15 +12,12 @@ namespace SocietyManager.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Receipt
+    public partial class Login
     {
-        public int RcptId { get; set; }
-        public int PmntId { get; set; }
-        public int MtnId { get; set; }
-        public decimal Received { get; set; }
-        public System.DateTime RcptIssued { get; set; }
+        public string LoginProvider { get; set; }
+        public string ProviderKey { get; set; }
+        public string UserId { get; set; }
     
-        public virtual Maintenance Maintenance { get; set; }
-        public virtual Payment Payment { get; set; }
+        public virtual User User { get; set; }
     }
 }
