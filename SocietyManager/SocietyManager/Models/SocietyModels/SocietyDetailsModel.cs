@@ -14,6 +14,7 @@ namespace SocietyManager.Models.SocietyModels
         public string AccountNumber { get; set; }
         public int NumberOfFlats { get; set; }
 
-        public HttpPostedFileBase SocietyImage { get; set; }
+        public HttpPostedFileBase testImage { get; set; }
+        public byte[] SocietyImage { get; set; }
     }
 }

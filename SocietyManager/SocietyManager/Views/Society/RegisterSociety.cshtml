@@ -5,8 +5,20 @@
 }
 
 <h2>RegisterSociety</h2>
+@*  new {enctype="multipart/form-data"}) is required to send file data to controller
+    
+    enctype="multipart/form-data" is encryption type specified in the <form> within which
+    we keep the FileUpload element (<input type="file" />). 
+    As the file content is binary format and that is different than plain text format 
+    so enctype attribute is specified in the html form to indicate the server that 
+    the data that is being sent is not only text but also binary data.
 
-@using (Html.BeginForm()) 
+    ASP.NET MVC has it's own way of interpreting File element in the action method, 
+    all the necessary properties and method of File element is added to the 
+    HttpPostedFileBase class when the asp.net mvc form is submitted to the 
+    action method of the server.
+*@
+@using (Html.BeginForm("RegisterSociety","Society", FormMethod.Post, new {enctype= "multipart/form-data"}))
 {
     @Html.AntiForgeryToken()
     
@@ -54,6 +66,22 @@
             </div>
         </div>
 
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.testImage, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.testImage, new { type="file", htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NumberOfFlats, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.SocietyImage, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" id="societyImage" name="societyImage"
+                       accept="image/gif, image/jpeg, image/png" />
+                
+            </div>
+        </div>*@
 
 
         <div class="form-group">
