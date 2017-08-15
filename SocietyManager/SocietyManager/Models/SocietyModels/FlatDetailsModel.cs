@@ -18,5 +18,7 @@ namespace SocietyManager.Models.SocietyModels
         [Range(100,5000,ErrorMessage ="Please enter area between 100 & 5000")]
         public double Area { get; set; }
         public bool IsRented { get; set; }
+
+        public int SocietyId { get; set; }
     }
 }
