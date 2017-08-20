@@ -21,4 +21,19 @@ namespace SocietyManager.Models.SocietyModels
 
         public int SocietyId { get; set; }
     }
+
+    public class FlatListsModel
+    {
+        public FlatDetailsModel[] flatsInSociety { get; set; }
+
+        public FlatListsModel(int numberOfFlats)
+        {           
+            flatsInSociety = new FlatDetailsModel[numberOfFlats];
+           
+        }
+        public FlatListsModel()
+        {
+
+        }
+    }
 }

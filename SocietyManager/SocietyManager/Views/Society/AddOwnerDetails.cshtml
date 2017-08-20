@@ -1,0 +1,95 @@
+﻿@model SocietyManager.Models.SocietyModels.OwnerList
+
+@{
+    ViewBag.Title = "Add Owner Details";
+}
+
+<h2>AddOwnerDetails</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>OwnerList</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <table class="table">
+            <tr>
+                <th>
+                    @* Display header: Flat Number *@
+                    @Html.Display("Flat Number")
+                </th>
+                <th>
+                    @* Display header: First Name*@
+                    @Html.DisplayNameFor(model => model.ownerList[0].Person.FirstName)
+                </th>
+                <th>
+                    @* Display header: Last Name*@
+                    @Html.DisplayNameFor(model => model.ownerList[0].Person.LastName)
+                </th>
+                <th>
+                    @* Display header: Email*@
+                    @Html.DisplayNameFor(model => model.ownerList[0].Person.Email)
+                </th>
+                <th>
+                    @* Display header: Mobile Number*@
+                    @Html.DisplayNameFor(model => model.ownerList[0].Person.MobileNumber)
+                </th>
+                <th>
+                    @* Display header: Current Address*@
+                    @Html.DisplayNameFor(model => model.ownerList[0].Person.CurrentAddress)
+                </th>
+                <th>
+                    @* Display header: Current Address*@
+                    @Html.DisplayNameFor(model => model.ownerList[0].Person.PermanantAddress)
+                </th>
+            </tr>
+
+            @for (int i = 0; i < Model.ownerList.Count(); i++)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.flatList[i])
+                        @Html.ValidationMessageFor(modelItem => Model.flatList[i], "", new { @class = "text-danger" })
+                    </td>
+           
+                    <td>
+                        @Html.EditorFor(modelItem=>Model.ownerList[i].Person.FirstName)
+                        @Html.ValidationMessageFor(modelItem => Model.ownerList[i].Person.FirstName,"", new { @class="text-danger"})
+                    </td>
+                    <td>
+                        @Html.EditorFor(modelItem => Model.ownerList[i].Person.LastName)
+                        @Html.ValidationMessageFor(modelItem => Model.ownerList[i].Person.LastName, "", new { @class = "text-danger" })
+                    </td>
+                    <td>
+                        @Html.EditorFor(modelItem => Model.ownerList[i].Person.Email)
+                        @Html.ValidationMessageFor(modelItem => Model.ownerList[i].Person.Email, "", new { @class = "text-danger" })
+                    </td>
+                    <td>
+                        @Html.EditorFor(modelItem => Model.ownerList[i].Person.MobileNumber)
+                        @Html.ValidationMessageFor(modelItem => Model.ownerList[i].Person.MobileNumber, "", new { @class = "text-danger" })
+                    </td>
+                    <td>
+                        @Html.TextAreaFor(modelItem => Model.ownerList[i].Person.CurrentAddress)
+                        @Html.ValidationMessageFor(modelItem => Model.ownerList[i].Person.CurrentAddress, "", new { @class = "text-danger" })
+                    </td>
+
+                    <td>
+                        @Html.TextAreaFor(modelItem => Model.ownerList[i].Person.PermanantAddress)
+                        @Html.ValidationMessageFor(modelItem => Model.ownerList[i].Person.PermanantAddress, "", new { @class = "text-danger" })
+                    </td>
+                </tr>
+            }
+        </table>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
