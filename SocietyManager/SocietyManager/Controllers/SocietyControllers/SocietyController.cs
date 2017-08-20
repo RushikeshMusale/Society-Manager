@@ -123,7 +123,8 @@ namespace SocietyManager.Controllers.SocietyControllers
 
         public ActionResult AddOwnerDetails()
         {
-            int societyId = Session["societyId"]!=null ? (int)Session["societyId"]: -1;
+            // int societyId = Session["societyId"]!=null ? (int)Session["societyId"]: -1;
+            int societyId = (int)Session["societyId"];
             if (societyId != -1)
             {
                 //Get number of flats in that society
