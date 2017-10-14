@@ -9,6 +9,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Collections.Generic;
 
 namespace IdentitySample.Controllers
 {
@@ -19,7 +20,7 @@ namespace IdentitySample.Controllers
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
@@ -166,6 +167,37 @@ namespace IdentitySample.Controllers
             return View(model);
         }
 
+
+        //
+        // POST: /Account/Register
+       [HttpPost]
+        
+        public async Task<ActionResult> RegisterSocietyOwners()
+        {
+            List<RegisterViewModel> owners = (List<RegisterViewModel>)TempData["ownerAccounts"];
+            foreach (var model in owners)
+            {
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var result = await UserManager.CreateAsync(user, model.Password);
+                if (!result.Succeeded)
+                {
+                    //some action to be taken
+
+                    AddErrors(result);
+                    return View("Error");
+                }
+
+            }        
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult RegisterSocietyOwners(List<RegisterViewModel> ownerAccounts)
+        {
+            List<RegisterViewModel> fromPrevious = (List<RegisterViewModel>)TempData["ownerAccounts"];
+            TempData["ownerAccounts"] = fromPrevious;
+            return View();
+        }
         //
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]
